@@ -42,14 +42,15 @@ class App extends React.Component {
   }
 
   onChange = ({ target: { value } }) => {
-    this.setState({ tweet: value });
+    const tweet = value.replace(/[\r\n\t\f\v]/g, "");
+    this.setState({ tweet });
   };
 
   onPublish = () => {
     const newTweet = {
       avatar: tx01,
       username: "User",
-      tweet: this.state.tweet,
+      tweet: this.state.tweet.trimLeft().trimRight(),
       timestamp: dayjs().unix(),
     }
     this.setState({
