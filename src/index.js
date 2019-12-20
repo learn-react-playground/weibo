@@ -5,7 +5,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 
-
 if (module.hot) {
   module.hot.accept('./App', () => {
     const NextApp = require('./App').default;
