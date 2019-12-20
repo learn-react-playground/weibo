@@ -67,7 +67,7 @@ class App extends React.Component {
           <div style={{ marginRight: 8 }}>
             <span className={tweetLength > 140 ? "count-alert" : ""}>{tweetLength}</span>/140
           </div>
-          <Button onClick={this.onPublish} disabled={tweetLength > 140}>发布</Button>
+          <Button onClick={this.onPublish} disabled={(tweetLength > 140 || tweetLength <=0)}>发布</Button>
         </Row>
 
         {
