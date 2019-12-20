@@ -39,6 +39,24 @@ class App extends React.Component {
       tweet: "墨点无多泪点多，山河仍是旧山河。横流乱世杈椰树，留得文林细揣摹。",
       timestamp: "1566858365"
     }],
+    n: 0,
+  }
+
+  componentDidMount() {
+    this.timerID = setInterval(
+      () => this.tick(),
+      5000
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  tick() {
+    this.setState({
+      n: new Date()
+    });
   }
 
   onChange = ({ target: { value } }) => {
