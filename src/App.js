@@ -60,7 +60,6 @@ class App extends React.Component {
   }
 
   onChange = ({ target: { value } }) => {
-    const tweet = value.replace(/[\r\n\t\f\v]/g, "");
     this.setState({ tweet });
   };
 
@@ -92,7 +91,7 @@ class App extends React.Component {
           onChange={this.onChange}
           value={tweet}
         />
-        <Row type="flex" justify="end" align="middle" style={{ marginTop: 8 }}>
+        <Row type="flex" justify="end" align="middle" justify="end " style={{ marginTop: 8 }}>
           <div style={{ marginRight: 8 }}>
             <span className={tweetLength > 140 ? "count-alert" : ""}>{tweetLength}</span>/140
           </div>
